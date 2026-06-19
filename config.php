@@ -32,18 +32,18 @@ function calculate_shift($time_str = 'now') {
     
     if ($time_formatted >= '07:00' && $time_formatted < '15:00') {
         return 'day'; // เวรเช้า (07.00 เป็นต้นไป)
-    } elseif ($time_formatted >= '15:00' && $time_formatted < '22:30') {
+    } elseif ($time_formatted >= '15:00' && $time_formatted < '22:00') {
         return 'eve'; // เวรบ่าย (15.00 เป็นต้นไป)
     } else {
-        return 'night'; // เวรดึก (22.30 เป็นต้นไป)
+        return 'night'; // เวรดึก (22.00 เป็นต้นไป)
     }
 }
 
 function get_shift_name($shift_key) {
     $names = [
         'day' => 'เวรเช้า (07:00 - 15:00)',
-        'eve' => 'เวรบ่าย (15:00 - 22:30)',
-        'night' => 'เวรดึก (22:30 - 07:00)'
+        'eve' => 'เวรบ่าย (15:00 - 22:00)',
+        'night' => 'เวรดึก (22:00 - 07:00)'
     ];
     return isset($names[$shift_key]) ? $names[$shift_key] : 'ไม่ระบุ';
 }
@@ -58,14 +58,14 @@ function get_current_shift_range($shift_key) {
         $end->setTime(15, 0, 0);
     } elseif ($shift_key === 'eve') {
         $start->setTime(15, 0, 0);
-        $end->setTime(22, 30, 0);
+        $end->setTime(22, 00, 0);
     } else { // night
         $hour = (int)$now->format('H');
         if ($hour >= 22) {
-            $start->setTime(22, 30, 0);
+            $start->setTime(22, 00, 0);
             $end->modify('+1 day')->setTime(7, 0, 0);
         } else {
-            $start->modify('-1 day')->setTime(22, 30, 0);
+            $start->modify('-1 day')->setTime(22, 00, 0);
             $end->setTime(7, 0, 0);
         }
     }
