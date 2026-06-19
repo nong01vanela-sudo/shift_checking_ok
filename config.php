@@ -6,10 +6,10 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$host = '127.0.0.1';
-$db   = 'pn_check';
-$user = 'root';
-$pass = ''; // Default XAMPP password is empty
+$host = 'sql205.infinityfree.com';
+$db   = 'if0_42218812_pn_shift_check';
+$user = 'if0_42218812';
+$pass = 'shiftchecking'; 
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
