@@ -1,9 +1,9 @@
 <?php
 
-$host = 'ใส่ Database Host';
-$db   = 'ใส่ Database Name';
-$user = 'ใส่ Database User';
-$pass = 'ใส่ Password';
+$host = 'sql205.infinityfree.com';
+$db   = 'if0_42218812_pn_shift_check';
+$user = 'if0_42218812';
+$pass = 'shiftchecking'; 
 
 try {
     $pdo = new PDO(
