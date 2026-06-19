@@ -2,9 +2,9 @@
 // db_setup.php
 header('Content-Type: text/html; charset=utf-8');
 
-$host = '127.0.0.1';
-$user = 'root';
-$pass = ''; // Default XAMPP password is empty
+$host = 'sql205.infinityfree.com';
+$user = 'if0_42218812';
+$pass = 'shiftchecking'; 
 
 try {
     // 1. Connect to MySQL Server (without specifying database to ensure we can create it)
